@@ -9,7 +9,7 @@ const Timeline = () => {
 const [data, setData] = useState(0);
 
 const fetchDataAPI = () => {
-    Axios.get("/timeline")
+    Axios.get("https://nameless-plateau-43210.herokuapp.com/timeline")
     .then((response) => setData(response.data))
     .catch((error) => console.log(error))
 }

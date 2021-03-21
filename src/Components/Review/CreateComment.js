@@ -11,7 +11,7 @@ const CreateComment = () => {
     const [data, setData] = useState([]);
     
     const fetchComments = () => {
-         axios.get("/comments")
+         axios.get("https://nameless-plateau-43210.herokuapp.com/comments")
         .then((response) => setData(response.data))
         .catch((error) => console.log(error))
     }
@@ -22,7 +22,7 @@ const CreateComment = () => {
             commentBody: commentBody,
             password: password
         }
-        axios.post('/comments', comment)
+        axios.post('https://nameless-plateau-43210.herokuapp.com/comments', comment)
         .then (res => {
             console.log(res)
         })
@@ -36,7 +36,7 @@ const CreateComment = () => {
             password: password
         }
         if(password === data[index].password) {
-        axios.put(`/comments/${id}`, comment)
+        axios.put(`https://nameless-plateau-43210.herokuapp.com/comments/${id}`, comment)
         .then((response) => {console.log(response.data.message)})
         .catch((error) => {console.log(error)})
         }
@@ -46,7 +46,7 @@ const CreateComment = () => {
     }
     const deleteComment = (id, index) => {
         if (password === data[index].password) {
-        axios.delete(`/comments/${id}`)
+        axios.delete(`https://nameless-plateau-43210.herokuapp.com/comments/${id}`)
         .then((response) => {console.log(response.data.message) })
         .catch((error) => {console.log(error)})
     }
