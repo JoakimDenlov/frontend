@@ -37,7 +37,10 @@ const CreateComment = () => {
         }
         if(password === data[index].password) {
         axios.put(`https://nameless-plateau-43210.herokuapp.com/comments/${id}`, comment)
-        .then((response) => {console.log(response.data.message)})
+        .then((response) => {console.log(response.data.message)
+        alert("Comment was updated")
+        window.location.reload()
+    })
         .catch((error) => {console.log(error)})
         }
         else {
@@ -47,7 +50,11 @@ const CreateComment = () => {
     const deleteComment = (id, index) => {
         if (password === data[index].password) {
         axios.delete(`https://nameless-plateau-43210.herokuapp.com/comments/${id}`)
-        .then((response) => {console.log(response.data.message) })
+        .then((response) => {console.log(response.data.message) 
+        alert("Comment was deleted")
+        window.location.reload()
+    
+    })
         .catch((error) => {console.log(error)})
     }
     else {
